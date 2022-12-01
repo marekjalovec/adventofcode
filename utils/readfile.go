@@ -11,7 +11,7 @@ func ReadFile(fileName string) []string {
 
 	f, err := os.Open(fileName)
 	if err != nil {
-		log.Fatalf(`Error reading file %s.`, fileName)
+		log.Fatalf(`Error reading file "%s": %s`, fileName, err)
 	}
 	defer f.Close()
 

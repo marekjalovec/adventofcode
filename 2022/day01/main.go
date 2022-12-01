@@ -7,11 +7,10 @@ import (
 	"strconv"
 )
 
-func getSumForTopN(fileName string, n int) int {
+func getSumForTopN(lines []string, n int) int {
 	var buff []int
 	var sum int
 
-	var lines = utils.ReadFile(fileName)
 	for _, v := range lines {
 		if v == "" {
 			buff = append(buff, sum)
@@ -28,15 +27,17 @@ func getSumForTopN(fileName string, n int) int {
 	return utils.Sum(buff[0:n])
 }
 
-func firstStar() int {
-	return getSumForTopN("input.txt", 1)
+func firstStar(lines []string) int {
+	return getSumForTopN(lines, 1)
 }
 
-func secondStar() int {
-	return getSumForTopN("input.txt", 3)
+func secondStar(lines []string) int {
+	return getSumForTopN(lines, 3)
 }
 
 func main() {
-	fmt.Println("First Star:", firstStar())
-	fmt.Println("Second Star:", secondStar())
+	var lines = utils.ReadFile("2022/day01/input.txt")
+
+	fmt.Println("First Star:", firstStar(lines))
+	fmt.Println("Second Star:", secondStar(lines))
 }
