@@ -63,7 +63,7 @@ func secondStar(input string) int {
 }
 
 func main() {
-	var lines = utils.ReadFile("2015/day03/input.txt")
+	var lines = utils.ReadFile("2015/day03-perfectly-spherical-houses-in-a-vacuum/input.txt")
 
 	fmt.Println("First Star:", firstStar(lines[0]))
 	fmt.Println("Second Star:", secondStar(lines[0]))
