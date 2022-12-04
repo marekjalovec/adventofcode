@@ -10,7 +10,7 @@ func firstStar(lines []string) int {
 	var sum int
 	for _, line := range lines {
 		ranges := utils.Map(strings.Split(line, ","), func(s string) []int {
-			return utils.Map(strings.Split(s, "-"), utils.ParseInteger)
+			return utils.Map(strings.Split(s, "-"), utils.ParseInt)
 		})
 
 		if (ranges[0][0] >= ranges[1][0] && ranges[0][1] <= ranges[1][1]) ||
@@ -26,7 +26,7 @@ func secondStar(lines []string) int {
 	var sum int
 	for _, line := range lines {
 		ranges := utils.Map(strings.Split(line, ","), func(s string) []int {
-			return utils.Map(strings.Split(s, "-"), utils.ParseInteger)
+			return utils.Map(strings.Split(s, "-"), utils.ParseInt)
 		})
 
 		if (ranges[0][0] >= ranges[1][0] && ranges[0][0] <= ranges[1][1]) ||

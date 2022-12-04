@@ -4,19 +4,13 @@ import (
 	"adventofcode/utils"
 	"fmt"
 	"sort"
-	"strconv"
 	"strings"
 )
 
 func parseValues(input string) (int, int, int) {
-	var values = strings.Split(input, "x")
-	var intVal = utils.Map(values, func(value string) int {
-		var v, _ = strconv.ParseInt(value, 10, 0)
+	var values = utils.Map(strings.Split(input, "x"), utils.ParseInt)
 
-		return int(v)
-	})
-
-	return intVal[0], intVal[1], intVal[2]
+	return values[0], values[1], values[2]
 }
 
 func paperForBox(input string) int {
