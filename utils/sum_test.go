@@ -9,7 +9,7 @@ type TestCase struct {
 
 func TestSum(t *testing.T) {
 	var dict = []TestCase{
-		{[]int{1, 2, 3},  6},
+		{[]int{1, 2, 3}, 6},
 		{[]int{-5, 5}, 0},
 		{[]int{}, 0},
 	}

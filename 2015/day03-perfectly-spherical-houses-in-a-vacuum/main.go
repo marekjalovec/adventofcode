@@ -1,8 +1,9 @@
 package main
 
 import (
-	"adventofcode/utils"
 	"fmt"
+
+	"adventofcode/utils"
 )
 
 type Coords struct {

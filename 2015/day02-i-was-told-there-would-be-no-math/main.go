@@ -1,10 +1,11 @@
 package main
 
 import (
-	"adventofcode/utils"
 	"fmt"
 	"sort"
 	"strings"
+
+	"adventofcode/utils"
 )
 
 func parseValues(input string) (int, int, int) {

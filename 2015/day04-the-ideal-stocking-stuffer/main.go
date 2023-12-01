@@ -1,9 +1,10 @@
 package main
 
 import (
-	"adventofcode/utils"
 	"crypto/md5"
 	"fmt"
+
+	"adventofcode/utils"
 )
 
 func getSuffix(input string, prefixMatch string) int {

@@ -1,8 +1,9 @@
 package main
 
 import (
-	"adventofcode/utils"
 	"testing"
+
+	"adventofcode/utils"
 )
 
 var lines = utils.ReadFile("input_test.txt")

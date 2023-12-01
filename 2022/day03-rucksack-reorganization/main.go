@@ -1,9 +1,10 @@
 package main
 
 import (
-	"adventofcode/utils"
 	"fmt"
 	"strings"
+
+	"adventofcode/utils"
 )
 
 func findDuplicate(inputs []string) int32 {

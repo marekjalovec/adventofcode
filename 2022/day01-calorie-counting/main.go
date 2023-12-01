@@ -1,10 +1,11 @@
 package main
 
 import (
-	"adventofcode/utils"
 	"fmt"
 	"sort"
 	"strconv"
+
+	"adventofcode/utils"
 )
 
 func getSumForTopN(lines []string, n int) int {
