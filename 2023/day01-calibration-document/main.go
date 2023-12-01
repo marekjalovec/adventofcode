@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"regexp"
-	"strconv"
 	"strings"
 
 	"golang.org/x/exp/maps"
@@ -16,13 +15,11 @@ func firstStar(lines []string) int {
 	reg := regexp.MustCompile(`^[^0-9]*([0-9]).*?([0-9]?)[^0-9]*$`)
 	for _, v := range lines {
 		line := reg.FindStringSubmatch(v)
-		var num int
 		if line[2] != "" {
-			num, _ = strconv.Atoi(fmt.Sprintf("%s%s", line[1], line[2]))
+			sum += utils.ParseInt(fmt.Sprintf("%s%s", line[1], line[2]))
 		} else {
-			num, _ = strconv.Atoi(fmt.Sprintf("%s%s", line[1], line[1]))
+			sum += utils.ParseInt(fmt.Sprintf("%s%s", line[1], line[1]))
 		}
-		sum += num
 	}
 	return sum
 }
@@ -53,6 +50,7 @@ func secondStar(lines []string) int {
 	findNum := regexp.MustCompile(strings.Join(maps.Keys(numMap), "|"))
 	for _, v := range lines {
 		first := findNum.FindString(v)
+
 		var last string
 		for i := len(v); i > 0; i-- {
 			last = findNum.FindString(v[i-1:])
@@ -60,8 +58,8 @@ func secondStar(lines []string) int {
 				break
 			}
 		}
-		num, _ := strconv.Atoi(fmt.Sprintf("%s%s", numMap[first], numMap[last]))
-		sum += num
+
+		sum += utils.ParseInt(fmt.Sprintf("%s%s", numMap[first], numMap[last]))
 	}
 
 	return sum
