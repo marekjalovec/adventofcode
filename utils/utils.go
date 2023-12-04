@@ -43,6 +43,18 @@ func Map[T, U any](data []T, f func(T) U) []U {
 	return res
 }
 
+func Filter[T any](data []T, f func(T) bool) []T {
+	res := make([]T, 0, len(data))
+
+	for _, v := range data {
+		if f(v) {
+			res = append(res, v)
+		}
+	}
+
+	return res
+}
+
 func Sum[T int](data []T) T {
 	var res T
 
@@ -78,4 +90,26 @@ func ReadFile(fileName string) []string {
 	}
 
 	return lines
+}
+
+func Overlap[T comparable](a []T, b []T) []T {
+	var res []T
+
+	for _, v := range b {
+		if Contains(a, v) {
+			res = append(res, v)
+		}
+	}
+
+	return res
+}
+
+func Contains[T comparable](h []T, n T) bool {
+	for _, v := range h {
+		if v == n {
+			return true
+		}
+	}
+
+	return false
 }
